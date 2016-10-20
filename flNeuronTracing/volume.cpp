@@ -289,7 +289,7 @@ void Volume::Draw() const
 
 #else
     glBegin(GL_QUADS);
-    float view[3] = { abs(matrix[2]), abs(matrix[6]), abs(matrix[10]) }; // vec4 view = mat4(matrix) * vec4(0,0,-1,0);
+    float view[3] = { abs(matrix[2]), abs(matrix[6]), abs(matrix[10]) }; // vec4 view = mat4(mat) * vec4(0,0,-1,0);
     int maxis = (view[0]>view[1]) ? (view[0]>view[2] ? 0 : 2) : (view[1]>view[2] ? 1 : 2);
     if (maxis == 0) {
         size_t stepx = (size_t)(_width/abs(matrix[2]) + 0.5f);
